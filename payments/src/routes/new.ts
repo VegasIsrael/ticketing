@@ -35,7 +35,6 @@ router.post('/api/payments', requireAuth, validation, validateRequest, async (re
     }
 
     if (order.userId !== req.currentUser!.id) {
-        console.log(order.userId, req.currentUser!.id);
         throw new NotAuthorizedError();
     }
 
